@@ -28,7 +28,7 @@ a{
 	clear: both;
 }
 body {
-    background: url(../img/bg.jpg) no-repeat;
+    background: url(bg.jpg) no-repeat;
     background-size: cover;
 }
 .nav {
