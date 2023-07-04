@@ -1,0 +1,250 @@
+/*Globl styles*/
+ body {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        background-color: #fff;
+        margin: 0;
+        padding: 0;
+      }
+      /*main styles*/
+      #main {
+        margin-top: 60px;
+      }
+      
+      #main .inner {
+        padding: 40px;
+        background-color: #fff;
+        border-radius: 5px;
+      }
+      /*header styles*/
+      #header {
+        padding: 20px 0;
+        text-align: center;
+      }
+      
+      #header .logo {
+        display: inline;
+        font-size: 52px;
+        font-weight: bold;
+        color: indianred;
+        text-decoration: none;
+      }
+      
+      #header ul.icons {
+        margin: 20px 0 0;
+        padding: 0;
+      }
+      
+      #header ul.icons li {
+        display: inline-block;
+        margin-right: 50px;
+      }
+      
+      #header ul.icons li a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 50px;
+        background-color: #fff;
+        color: indianred;
+        text-align: left;
+        text-decoration: none;
+        border-radius: 50%;
+      }
+      /*banner styles*/
+      #banner {
+        background-color: cadetblue;
+        font-size: larger;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        border-radius: 25px;
+     /*image styles*/
+  .image {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .image img {
+    width: 25%;
+    height: auto;
+  }
+      }
+      section {
+        padding: 40px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    
+section header.major {
+    margin-bottom: 20px;
+}
+
+section header.major h2 {
+    font-size: 24px;
+}
+section .features {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section .features article {
+    flex-basis: 100%;
+    margin-bottom: 40px;
+    display: flex;
+}
+
+section .features article .content {
+    flex-grow: 1;
+    padding-left: 20px;
+}
+
+section .features article span {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-color: #333;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50px;
+}
+
+section .features article h3 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+section .features article p {
+    margin-bottom: 0;
+}
+section header.major {
+    margin-bottom: 20px;
+  }
+  
+  section header.major h2 {
+    font-size: 24px;
+  }
+  /*section styles*/
+  
+  section .posts {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  section .posts article {
+    flex-basis: 100%;
+    margin-bottom: 40px;
+  }
+  
+  section .posts article .image {
+    display: block;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  section .posts article .image img {
+    width: 100%;
+  }
+  
+  section .posts article h3 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  section .posts article p {
+    margin-bottom: 0;
+  }
+  
+  section .posts article ul.actions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  section .posts article ul.actions li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  section .posts article ul.actions li a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  section .posts article ul.actions li a.button:hover {
+    background-color: #555;
+  }
+  /*article styles*/
+  article {
+    margin-bottom: 40px;
+  }
+  
+  article .image {
+    display: block;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  article .image img {
+    width: 100%;
+  }
+  
+  article h3 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  article p {
+    margin-bottom: 0;
+  }
+  
+  article ul.actions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  article ul.actions li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  article ul.actions li a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  article ul.actions li a.button:hover {
+    background-color: #555;
+  }
+ /*menu styles*/
+ #menu {
+  background-color: #333;
+}
+
+#menu header.major {
+  padding: 20px;
+  color: #fff;
+}
+#footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+  
