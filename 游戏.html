@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>打气球</title>
+
+  <style>
+body {
+    background-color: lightpink;
+    background: linear-gradient(to bottom,#41efef, #4ee391);
+    text-align: center;
+  }
+  h1 {
+    color: rgb(226, 91, 120);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 400%;
+  }
+  #score{
+    color: rgb(226, 91, 120);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: xx-large;
+    font-weight: 700%;
+    text-align: left;
+  }
+  #restart-button{
+    color: indianred;
+    font-size: x-large;
+    float: left;
+    position: absolute; 
+    bottom: 350px;
+    left: 10px;
+  }
+  #game-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 600px;
+    margin: 50px auto;
+  }
+  
+  .balloon {
+    display: inline-block;
+    width: 100px;
+    height: 150px;
+    background-color: #2acd2f;
+    border-radius: 50%;
+    margin: 7px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    position: relative;
+  }
+  
+  #countdown {
+      position: absolute;
+      left: 0;
+    font-size: 24px;
+    color: rgb(226, 91, 120) ;
+    font-weight: bold;
+  }
+  
+  .balloon:hover {
+    transform: scale(1.1);
+  }
+    @keyframes float {
+      from {
+        transform: translateY(100%);
+      }
+      to {
+        transform: translateY(-100%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>打气球游戏</h1>
+  <h2 id="score">得分: 0</h2>
+  <h2 id="countdown">倒计时: 10</h2>
+  <button id="restart-button">重新开始</button>
+  <div id="game-container" onclick="handleClick(event)" class="playing"></div>
+  <audio id="background-music" src="rhythm_factory.mp3" autoplay loop></audio>
+    <div id="balloon" onclick="inflateBalloon()"></div>
+
+  <script>
+    const gameContainer = document.getElementById('game-container');
+const scoreDisplay = document.getElementById('score');
+let score = 0;
+function restartGame() {
+  gameIsActive = true;
+  score = 0;
+  scoreDisplay.innerHTML = '得分: ' + score;
+  balloonInterval = setInterval(function() { 
+    const balloon = createBalloon();
+    balloon.style.backgroundColor = getRandomColor();
+    gameContainer.appendChild(balloon);
+  }, 1000);
+  startCountdown();
+}
+
+document.getElementById('restart-button').addEventListener('click', restartGame);
+
+function createBalloon() {
+  const balloon = document.createElement('div');
+  balloon.classList.add('balloon');
+  balloon.style.animation = `float ${Math.random() * 3+ 4}s linear infinite`;
+  balloon.addEventListener('click', function() {
+    if (gameIsActive) { 
+      this.remove();
+      score++;
+      scoreDisplay.innerHTML = '得分: ' + score;
+    }
+  });
+  return balloon;
+}
+
+  // 创建气球元素
+  const balloon = document.createElement('div');
+  balloon.className = 'balloon';
+  
+  const randomPosition = Math.floor(Math.random() * 80); // 生成0到80的随机整数
+  balloon.style.left = randomPosition + 'vw';
+  
+
+
+  function startCountdown() {
+  var countdown = 10; // S
+  var countdownDisplay = document.getElementById('countdown');
+  var countdownInterval = setInterval(function() {
+    countdown--;
+    countdownDisplay.innerText = '倒计时： ' + countdown;
+    if (countdown <= 0) {
+      clearInterval(countdownInterval);
+      alert('Countdown ended. Game over.');
+      setTimeout(() => {
+          gameIsActive = false;
+          clearInterval(balloonInterval); // Stop creating balloons
+      }, 100);
+    }
+  }, 1000);
+}
+
+// Start the countdown when the script loads
+startCountdown();
+
+
+function getRandomColor() {
+  const colors = ['#FF6347', '#FF8C00', '#FFD700', '#7CFC00', '#00BFFF', '#8A2BE2', '#FF1493'];
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+
+let balloonInterval = setInterval(function() {
+  const balloon = createBalloon();
+  balloon.style.backgroundColor = getRandomColor();
+  gameContainer.appendChild(balloon);
+}, 1000);
+
+let gameIsActive = true;
+
+
+// Start the countdown
+setTimeout(() => {
+    alert('Countdown ended. Game over.');
+    setTimeout(() => {
+        gameIsActive = false;
+        clearInterval(balloonInterval); // Stop creating balloons
+    }, 100);
+}, 10000); // 10000 milliseconds = 10 seconds
+
+// Function to play the game
+function playGame() {
+    if (gameIsActive) {
+        // Game logic goes here
+    } else {
+        console.log('Game over. The countdown has ended.');
+    }
+}
+  </script>
+</body>
+</html>
